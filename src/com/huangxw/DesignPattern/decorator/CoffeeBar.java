@@ -9,6 +9,10 @@ package com.huangxw.DesignPattern.decorator;
  *
  * 装饰者模式
  * 装饰者对象包含被装饰者对象实例
+ *
+ * 装饰者模式优缺点：
+ * 优点：动态地为对象增加新的功能或者撤销功能（继承就不能做到这一点）
+ * 缺点：会产生过多的相似的对象，不容易拍错！
  */
 public class CoffeeBar {
     public static void main(String[] args) {

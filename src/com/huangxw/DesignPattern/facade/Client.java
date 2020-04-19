@@ -1,5 +1,9 @@
 package com.huangxw.DesignPattern.facade;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
+
 /**
  * 外观模式
  * 影院管理项目需求
@@ -24,5 +28,6 @@ public class Client {
         HomeTheaterFacade homeTheaterFacade = new HomeTheaterFacade();
         homeTheaterFacade.ready();
         homeTheaterFacade.play();
+
     }
 }
