@@ -48,12 +48,13 @@ public class RedisTest {
                     }
                     inventory--;
                     System.out.println(inventory);
+                    countDownLatch.countDown();
                     //System.out.println("线程执行：" + Thread.currentThread().getName());
                 }finally
                 {
                     redisLock.unlock(uuid);
                 }
-                countDownLatch.countDown();
+
             });
         }
 

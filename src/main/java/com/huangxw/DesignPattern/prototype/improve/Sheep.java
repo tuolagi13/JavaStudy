@@ -10,7 +10,7 @@ public class Sheep implements Cloneable{
         this.age = age;
         this.color = color;
     }
-
+    public void setName(String name){this.name = name;}
     public String getName() {
         return name;
     }
