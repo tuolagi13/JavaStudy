@@ -1,7 +1,7 @@
 package com.huangxw.DesignPattern.observer;
 
 /**
- * 核心类Client
+ * 核心类
  * 1.包含最新天气信息
  * 2.含有CurrentCondition对象
  * 3.当数据有更新时，主动调用含有CurrentCondition对象的update方法（含display方法）

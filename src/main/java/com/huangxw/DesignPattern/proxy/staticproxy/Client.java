@@ -2,7 +2,7 @@ package com.huangxw.DesignPattern.proxy.staticproxy;
 
 /**
  * 静态代理
- * 接口、代理对象、目标i对象
+ * 接口、代理对象、目标对象
  * 优点：
  * 代理对象可以对目标对象进行扩展
  * 缺点：
