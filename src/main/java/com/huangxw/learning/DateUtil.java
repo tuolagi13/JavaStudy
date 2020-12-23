@@ -4,6 +4,10 @@ import com.huangxw.DesignPattern.factory.simplefactory.order.SimpleFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -99,7 +103,10 @@ public class DateUtil {
      *  but you want to avoid synchronizing access to that object (I’m looking at you, SimpleDateFormat).
      *  Instead, give each thread its own instance of the object
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        URLConnection conn = new URL("http://www.baidu.com").openConnection();// 中国科学院国家授时中心
+        String dateStr1 = conn.getHeaderField("Date");
+        System.out.println(dateStr1);
         DateUtil.formatDate(new Date(),MDHMSS);
         new Thread(() -> DateUtil.formatDate(new Date(),MDHMSS)).start();
         new Thread(() -> DateUtil.formatDate(new Date(),MDHMSS)).start();
