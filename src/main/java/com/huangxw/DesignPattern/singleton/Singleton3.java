@@ -17,7 +17,7 @@ public class Singleton3 {
     }
 
     //2.本类内部成员变量
-    private  static Singleton3 instance;
+    private static Singleton3 instance;
 
 
     //3.提供一个公有的静态方法，当使用到该方法时，才去创建instance

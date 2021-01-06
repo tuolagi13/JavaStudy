@@ -25,6 +25,6 @@ public class Singleton6 {
 
     public static void main(String[] args) {
 
-        Singleton6 singleton1 = Singleton6.getInstance();
+        Singleton6 singleton6 = Singleton6.getInstance();
     }
 }

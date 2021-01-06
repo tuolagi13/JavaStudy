@@ -28,6 +28,6 @@ public class SingletonFinal {
 
     public static void main(String[] args) {
 
-        SingletonFinal singleton1 = SingletonFinal.getInstance();
+        SingletonFinal singletonFinal = SingletonFinal.getInstance();
     }
 }
