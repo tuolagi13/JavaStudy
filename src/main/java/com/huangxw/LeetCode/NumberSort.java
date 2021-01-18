@@ -7,6 +7,7 @@ import java.util.List;
  * 有1、2、3、4四个数，输出能组成的所有三位数，要求三位数个、十、百位不能同时相同
  */
 public class NumberSort {
+    //暴力解法
     public static List<Integer> conut(int[] input) {
         List<Integer> result = new ArrayList<Integer>();
         int A = 0;//百位数
@@ -32,6 +33,8 @@ public class NumberSort {
         }
         return result;
     }
+    
+    
 
     public static void main(String[] args) {
         int[] input = new int[]{1,2,3,4};
