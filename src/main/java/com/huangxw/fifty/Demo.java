@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class Demo {
@@ -26,8 +28,13 @@ public class Demo {
         wives.add(new Couple(5,"朱丽叶"));
         
         //第一版算法
-        code1(husbands,wives);
-        
+        //code1(husbands,wives);
+        //第二版算法 减少循环次数
+        //code2(husbands,wives);
+        //第三版算法 符合条件的wives删掉
+        //code3(husbands,wives);
+        //第四种算法 重点
+        code4(husbands,wives);
     }
     
     public static void code1(List<Couple> husbands,List<Couple> wives) {
@@ -36,11 +43,76 @@ public class Demo {
         
         for(Couple husband : husbands)
         {
-            
+            for(Couple wife : wives)
+            {
+                count++;
+                if(husband.getFamilyId().equals(wife.getFamilyId()))
+                    System.out.println(husband.getUserName() + " loves " + wife.getUserName());
+            }
         }
-        
+        System.out.println("循环了：" + count);
     }
     
+    public static void code2(List<Couple> husbands,List<Couple> wives) {
+        //用于计算循环数
+        int count = 0;
+        
+        for(Couple husband : husbands)
+        {
+            for(Couple wife : wives)
+            {
+                count++;
+                if(husband.getFamilyId().equals(wife.getFamilyId()))
+                {
+                    System.out.println(husband.getUserName() + " loves " + wife.getUserName());
+                    break;
+                }
+            }
+        }
+        System.out.println("循环了：" + count);
+    }
+    
+    public static void code3(List<Couple> husbands,List<Couple> wives) {
+        //用于计算循环数
+        int count = 0;
+        
+        for(Couple husband : husbands)
+        {
+            for(Couple wife : wives)
+            {
+                count++;
+                if(husband.getFamilyId().equals(wife.getFamilyId()))
+                {
+                    System.out.println(husband.getUserName() + " loves " + wife.getUserName());
+                    wives.remove(wife);
+                    break;
+                }
+            }
+        }
+        System.out.println("循环了：" + count);
+    }
+    
+    public static void code4(List<Couple> husbands,List<Couple> wives) {
+        //用于计算循环数
+        int count = 0;
+        Map<Integer,Couple> wifeMap = new HashMap<>();
+        for(Couple wife : wives)
+        {
+            count++;
+            wifeMap.put(wife.getFamilyId(),wife);
+        }
+        
+        for(Couple husband : husbands)
+        {
+            count++;
+            if(wifeMap.containsKey(husband.getFamilyId()))
+            {
+                System.out.println(husband.getUserName() + " loves " + wifeMap.get(husband.getFamilyId()).getUserName());
+            }
+        }
+        
+        System.out.println("循环了：" + count);
+    }
 }
 
 @Data
